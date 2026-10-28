@@ -1,0 +1,15 @@
+
+> soap@0.1.0 dev
+> next dev
+
+▲ Next.js 16.4.2 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://100.81.161.37:3000
+✓ Ready in 409ms
+✓ Running next.config.ts took 33ms
+- Cache Components enabled
+- Partial Prefetching enabled
+
+ GET / 200 in 605ms (next.js: 309ms, application-code: 296ms)
+ GET / 200 in 58ms (next.js: 1.4ms, application-code: 56ms)
+[?25h
