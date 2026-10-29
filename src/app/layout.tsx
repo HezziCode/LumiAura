@@ -146,7 +146,7 @@ export default function RootLayout({
         item: {
           "@type": "Product",
           name: "Rice & Niacinamide Soap (Double Power)",
-          image: `${baseUrl}/images/soap-pic-1.jpeg`,
+          image: `${baseUrl}/images/lumiora-rice-niacinamide.jpg`,
           description:
             "Formulated with double power pure niacinamide (Vitamin B3) and organic rice milk extract. Pore tightening, dual skin control, strengthens skin barrier, deeply hydrates.",
           brand: { "@type": "Brand", name: "LUMIORA" },
@@ -166,7 +166,7 @@ export default function RootLayout({
         item: {
           "@type": "Product",
           name: "Rice & Turmeric Soap",
-          image: `${baseUrl}/images/soap-pic-3.jpeg`,
+          image: `${baseUrl}/images/lumiora-rice-turmeric.jpg`,
           description:
             "Raw wild kasturi turmeric, fresh organic rice milk, kokum butter. Skin tightening and glowing soap, reduces pimple marks & acne, leaves skin soft and supple.",
           brand: { "@type": "Brand", name: "LUMIORA" },
@@ -186,7 +186,7 @@ export default function RootLayout({
         item: {
           "@type": "Product",
           name: "Coffee & Cocoa Soap",
-          image: `${baseUrl}/images/soap-pic-4.jpeg`,
+          image: `${baseUrl}/images/lumiora-coffee-cocoa.jpg`,
           description:
             "Fresh ground Arabica coffee and pure raw cocoa butter. Skin glowing and nourishing soap, soft and smooth skin, gentle exfoliation.",
           brand: { "@type": "Brand", name: "LUMIORA" },
@@ -206,7 +206,7 @@ export default function RootLayout({
         item: {
           "@type": "Product",
           name: "Kojic Acid Skin Whitening Soap",
-          image: `${baseUrl}/images/soap-pic-2.png`,
+          image: `${baseUrl}/images/lumiora-kojic-acid.jpg`,
           description:
             "High-potency pure kojic acid and alpha arbutin. Reduces two-tone skin, reduces acne and pimple marks, removes dark spots, anti-aging benefits.",
           brand: { "@type": "Brand", name: "LUMIORA" },

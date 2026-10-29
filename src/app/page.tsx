@@ -42,7 +42,7 @@ const SOAPS: Soap[] = [
     ],
     ingredients:
       "Organic rice milk, pure niacinamide (B3), cold-pressed olive oil, virgin coconut oil, unrefined shea butter, sweet almond oil.",
-    img: "/images/soap-pic-1.jpeg",
+    img: "/images/lumiora-rice-niacinamide.jpg",
     color: "#e8dcbe",
     badge: "Double Power",
   },
@@ -60,7 +60,7 @@ const SOAPS: Soap[] = [
     ],
     ingredients:
       "Organic rice milk, wild kasturi turmeric, virgin coconut oil, cold-pressed olive oil, raw kokum butter, orange peel essential oil.",
-    img: "/images/soap-pic-3.jpeg",
+    img: "/images/lumiora-rice-turmeric.jpg",
     color: "#d19e38",
     badge: "Tightening & Glow",
   },
@@ -78,7 +78,7 @@ const SOAPS: Soap[] = [
     ],
     ingredients:
       "Cold-pressed olive oil, virgin coconut oil, pure cocoa butter, ground Arabica coffee, raw brown sugar, vanilla bean extract.",
-    img: "/images/soap-pic-4.jpeg",
+    img: "/images/lumiora-coffee-cocoa.jpg",
     color: "#5c3d2e",
     badge: "Glowing & Nourishing",
   },
@@ -97,7 +97,7 @@ const SOAPS: Soap[] = [
     ],
     ingredients:
       "Cold-pressed olive oil, virgin coconut oil, pure kojic acid, alpha arbutin, unrefined shea butter, sweet orange peel essential oil.",
-    img: "/images/soap-pic-2.png",
+    img: "/images/lumiora-kojic-acid.jpg",
     color: "#e69c44",
     badge: "Skin Whitening",
   },
@@ -569,8 +569,8 @@ export default function Home() {
           </div>
           <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm bg-sand shadow-sm">
             <Image
-              src="/images/real-gift-box.jpg"
-              alt="Artisanal cold-process soap bars and custom gift box crafted in Karachi"
+              src="/images/lumiora-packaging-showcase.jpg"
+              alt="LUMIORA Handcrafted custom packaging, embossed linen boxes, and stationery in Karachi"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 50vw"
