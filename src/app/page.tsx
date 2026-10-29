@@ -31,7 +31,7 @@ const SOAPS: Soap[] = [
     id: "rice-niacinamide",
     name: "Rice & Niacinamide Soap (Double Power)",
     line: "Double-strength pure niacinamide (Vitamin B3) and organic rice milk extract.",
-    price: 550,
+    price: 299,
     weight: "125 g",
     skin: ["brightening", "acne"],
     benefits: [
@@ -50,7 +50,7 @@ const SOAPS: Soap[] = [
     id: "rice-turmeric",
     name: "Rice & Turmeric Soap",
     line: "Raw wild kasturi turmeric, fresh organic rice milk, kokum butter & sweet orange.",
-    price: 550,
+    price: 299,
     weight: "125 g",
     skin: ["brightening", "acne"],
     benefits: [
@@ -68,7 +68,7 @@ const SOAPS: Soap[] = [
     id: "coffee-cocoa",
     name: "Coffee & Cocoa Soap",
     line: "Freshly ground Arabica coffee, pure raw cocoa butter & unrefined brown sugar.",
-    price: 500,
+    price: 299,
     weight: "125 g",
     skin: ["exfoliating", "brightening"],
     benefits: [
@@ -86,7 +86,7 @@ const SOAPS: Soap[] = [
     id: "kojic-arbutin",
     name: "Kojic Acid Skin Whitening Soap",
     line: "Pure kojic acid, alpha arbutin, cold-pressed olive oil & sweet orange.",
-    price: 550,
+    price: 299,
     weight: "125 g",
     skin: ["brightening", "acne"],
     benefits: [

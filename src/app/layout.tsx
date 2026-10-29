@@ -108,7 +108,7 @@ export default function RootLayout({
       "Handcrafted cold-process soap atelier based in Karachi, Pakistan. Pure oils, whole botanicals, cured 4 weeks.",
     url: baseUrl,
     telephone: "+923222635439",
-    priceRange: "Rs. 500 - Rs. 550",
+    priceRange: "Rs. 299",
     image: `${baseUrl}/images/hero-kraft-box.jpg`,
     address: {
       "@type": "PostalAddress",
@@ -156,7 +156,7 @@ export default function RootLayout({
           brand: { "@type": "Brand", name: "LUMIORA" },
           offers: {
             "@type": "Offer",
-            price: "550",
+            price: "299",
             priceCurrency: "PKR",
             availability: "https://schema.org/InStock",
             itemCondition: "https://schema.org/NewCondition",
@@ -176,7 +176,7 @@ export default function RootLayout({
           brand: { "@type": "Brand", name: "LUMIORA" },
           offers: {
             "@type": "Offer",
-            price: "550",
+            price: "299",
             priceCurrency: "PKR",
             availability: "https://schema.org/InStock",
             itemCondition: "https://schema.org/NewCondition",
@@ -196,7 +196,7 @@ export default function RootLayout({
           brand: { "@type": "Brand", name: "LUMIORA" },
           offers: {
             "@type": "Offer",
-            price: "500",
+            price: "299",
             priceCurrency: "PKR",
             availability: "https://schema.org/InStock",
             itemCondition: "https://schema.org/NewCondition",
@@ -216,7 +216,7 @@ export default function RootLayout({
           brand: { "@type": "Brand", name: "LUMIORA" },
           offers: {
             "@type": "Offer",
-            price: "550",
+            price: "299",
             priceCurrency: "PKR",
             availability: "https://schema.org/InStock",
             itemCondition: "https://schema.org/NewCondition",
