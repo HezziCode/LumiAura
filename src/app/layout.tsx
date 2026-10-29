@@ -16,7 +16,7 @@ const publicSans = Public_Sans({
   display: "swap",
 });
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://lumiora.vercel.app";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://lumiorasoap.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
