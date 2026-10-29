@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "LUMIORA — Handcrafted Cold-Process Soap Atelier, Karachi",
     description:
-      "Pure oils, whole botanicals, four weeks on a curing rack in Karachi. Rice & Niacinamide (Double Power), Rice & Turmeric, Coffee & Cocoa, and Kojic Acid Skin Whitening bars.",
+      "Pure oils, whole botanicals, four weeks on a curing rack in Karachi. Rice & Niacinamide (Double Power), Rice & Turmeric, Coffee & Cocoa, and Kojic Acid, Alpha Arbutin & Anti-Aging bars.",
     url: baseUrl,
     siteName: "LUMIORA",
     images: [
@@ -108,7 +108,7 @@ export default function RootLayout({
       "Handcrafted cold-process soap atelier based in Karachi, Pakistan. Pure oils, whole botanicals, cured 4 weeks.",
     url: baseUrl,
     telephone: "+923222635439",
-    priceRange: "Rs. 299",
+    priceRange: "Rs. 200 - Rs. 300",
     image: `${baseUrl}/images/hero-kraft-box.jpg`,
     address: {
       "@type": "PostalAddress",
@@ -156,7 +156,7 @@ export default function RootLayout({
           brand: { "@type": "Brand", name: "LUMIORA" },
           offers: {
             "@type": "Offer",
-            price: "299",
+            price: "250",
             priceCurrency: "PKR",
             availability: "https://schema.org/InStock",
             itemCondition: "https://schema.org/NewCondition",
@@ -176,7 +176,7 @@ export default function RootLayout({
           brand: { "@type": "Brand", name: "LUMIORA" },
           offers: {
             "@type": "Offer",
-            price: "299",
+            price: "200",
             priceCurrency: "PKR",
             availability: "https://schema.org/InStock",
             itemCondition: "https://schema.org/NewCondition",
@@ -196,7 +196,7 @@ export default function RootLayout({
           brand: { "@type": "Brand", name: "LUMIORA" },
           offers: {
             "@type": "Offer",
-            price: "299",
+            price: "250",
             priceCurrency: "PKR",
             availability: "https://schema.org/InStock",
             itemCondition: "https://schema.org/NewCondition",
@@ -209,14 +209,14 @@ export default function RootLayout({
         position: 4,
         item: {
           "@type": "Product",
-          name: "Kojic Acid Skin Whitening Soap",
-          image: `${baseUrl}/images/lumiora-kojic-acid.jpg`,
+          name: "Kojic Acid, Alpha Arbutin & Anti-Aging Soap",
+          image: `${baseUrl}/images/lumiora-kojic-arbutin-bars.jpg`,
           description:
             "High-potency pure kojic acid and alpha arbutin. Reduces two-tone skin, reduces acne and pimple marks, removes dark spots, anti-aging benefits.",
           brand: { "@type": "Brand", name: "LUMIORA" },
           offers: {
             "@type": "Offer",
-            price: "299",
+            price: "300",
             priceCurrency: "PKR",
             availability: "https://schema.org/InStock",
             itemCondition: "https://schema.org/NewCondition",

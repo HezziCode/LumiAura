@@ -31,8 +31,8 @@ const SOAPS: Soap[] = [
     id: "rice-niacinamide",
     name: "Rice & Niacinamide Soap (Double Power)",
     line: "Double-strength pure niacinamide (Vitamin B3) and organic rice milk extract.",
-    price: 299,
-    weight: "125 g",
+    price: 250,
+    weight: "50 g",
     skin: ["brightening", "acne"],
     benefits: [
       "Pores tightening",
@@ -50,11 +50,11 @@ const SOAPS: Soap[] = [
     id: "rice-turmeric",
     name: "Rice & Turmeric Soap",
     line: "Raw wild kasturi turmeric, fresh organic rice milk, kokum butter & sweet orange.",
-    price: 299,
-    weight: "125 g",
+    price: 200,
+    weight: "50 g",
     skin: ["brightening", "acne"],
     benefits: [
-      "Skin tightening and glowing",
+      "Skin tightening and glowing soap",
       "Reduces pimple marks and acne",
       "Soft and supple skin",
     ],
@@ -68,8 +68,8 @@ const SOAPS: Soap[] = [
     id: "coffee-cocoa",
     name: "Coffee & Cocoa Soap",
     line: "Freshly ground Arabica coffee, pure raw cocoa butter & unrefined brown sugar.",
-    price: 299,
-    weight: "125 g",
+    price: 250,
+    weight: "50 g",
     skin: ["exfoliating", "brightening"],
     benefits: [
       "Skin glowing and nourishing",
@@ -84,10 +84,10 @@ const SOAPS: Soap[] = [
   },
   {
     id: "kojic-arbutin",
-    name: "Kojic Acid Skin Whitening Soap",
+    name: "Kojic Acid, Alpha Arbutin & Anti-Aging Soap",
     line: "Pure kojic acid, alpha arbutin, cold-pressed olive oil & sweet orange.",
-    price: 299,
-    weight: "125 g",
+    price: 300,
+    weight: "50 g",
     skin: ["brightening", "acne"],
     benefits: [
       "Reduces two-tone skin",
@@ -97,9 +97,9 @@ const SOAPS: Soap[] = [
     ],
     ingredients:
       "Cold-pressed olive oil, virgin coconut oil, pure kojic acid, alpha arbutin, unrefined shea butter, sweet orange peel essential oil.",
-    img: "/images/lumiora-kojic-acid.jpg",
+    img: "/images/lumiora-kojic-arbutin-bars.jpg",
     color: "#e69c44",
-    badge: "Skin Whitening",
+    badge: "Anti-Aging & Glow",
   },
 ];
 
@@ -519,19 +519,24 @@ export default function Home() {
 
       {/* ══════ EDITORIAL IMAGE BREAK ══════ */}
       <Reveal>
-        <div className="relative h-[60vh] min-h-[400px] overflow-hidden">
+        <div className="relative h-[60vh] min-h-[420px] overflow-hidden">
           <Image
-            src="/images/soap-pic-4.jpeg"
-            alt="Handcrafted Coffee Exfoliating Soap Bar with coffee beans"
+            src="/images/lumiora-editorial-banner.jpg"
+            alt="LUMIORA Handcrafted botanical cold-process soap bar on natural travertine stone with palm shadows"
             fill
-            className="object-cover"
+            className="object-cover object-right sm:object-center"
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-ink/30" />
-          <div className="absolute inset-0 flex items-center justify-center px-6">
-            <p className="max-w-lg text-center font-serif text-2xl font-light leading-relaxed text-white sm:text-3xl">
-              "A soap's only job is to clean gently. We don't claim more than that."
-            </p>
+          <div className="absolute inset-0 bg-gradient-to-r from-ink/65 via-ink/35 to-ink/10 sm:from-ink/50 sm:via-ink/20 sm:to-transparent" />
+          <div className="relative mx-auto flex h-full max-w-[1200px] items-center px-6 sm:px-12 lg:px-16">
+            <div className="max-w-md sm:max-w-lg">
+              <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-cream/90 block mb-3">
+                Pure Formulation
+              </span>
+              <p className="font-serif text-2xl sm:text-3xl lg:text-4xl font-light leading-relaxed text-white">
+                "A soap's only job is to clean gently. We don't claim more than that."
+              </p>
+            </div>
           </div>
         </div>
       </Reveal>
