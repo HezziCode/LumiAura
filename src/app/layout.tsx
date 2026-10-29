@@ -16,19 +16,20 @@ const publicSans = Public_Sans({
   display: "swap",
 });
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://lumiaura.com";
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://lumiora.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "LumiAura — Handmade Cold-Process Soap Atelier, Karachi",
-    template: "%s | LumiAura",
+    default: "LUMIORA — Handcrafted Cold-Process Soap Atelier, Karachi",
+    template: "%s | LUMIORA",
   },
   description:
-    "Handmade cold-process soap in Karachi by LumiAura. Made slowly with pure olive oil, virgin coconut oil, unrefined shea butter, and whole botanicals. 4 weeks cured. Cash on delivery all over Karachi.",
+    "Handmade cold-process soap in Karachi by LUMIORA. Handcrafted slowly with pure olive oil, virgin coconut oil, unrefined shea butter, and whole botanicals. 4 weeks cured. Cash on delivery all over Karachi.",
   keywords: [
-    "lumiaura",
-    "lumi aura soap",
+    "lumiora",
+    "lumiora soap",
+    "lumiora handcrafted",
     "handmade soap karachi",
     "cold process soap pakistan",
     "organic soap karachi",
@@ -42,24 +43,24 @@ export const metadata: Metadata = {
     "cash on delivery soap karachi",
     "cold process artisanal soaps",
   ],
-  authors: [{ name: "LumiAura", url: baseUrl }],
-  creator: "LumiAura",
-  publisher: "LumiAura",
+  authors: [{ name: "LUMIORA", url: baseUrl }],
+  creator: "LUMIORA",
+  publisher: "LUMIORA",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "LumiAura — Handmade Cold-Process Soap Atelier, Karachi",
+    title: "LUMIORA — Handcrafted Cold-Process Soap Atelier, Karachi",
     description:
       "Pure oils, whole botanicals, four weeks on a curing rack in Karachi. Rice & Niacinamide (Double Power), Rice & Turmeric, Coffee & Cocoa, and Kojic Acid Skin Whitening bars.",
     url: baseUrl,
-    siteName: "LumiAura",
+    siteName: "LUMIORA",
     images: [
       {
         url: "/images/hero-kraft-box.jpg",
         width: 800,
         height: 1000,
-        alt: "LumiAura Handmade Cold-Process Soaps in Kraft Packaging",
+        alt: "LUMIORA Handcrafted Cold-Process Soaps in Kraft Packaging",
       },
     ],
     locale: "en_PK",
@@ -67,7 +68,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "LumiAura — Cold-Process Soap, Karachi",
+    title: "LUMIORA — Handcrafted Soap, Karachi",
     description:
       "Handmade cold-process soap made with pure oils and whole botanicals. Cured four weeks. Karachi.",
     images: ["/images/hero-kraft-box.jpg"],
@@ -98,9 +99,9 @@ export default function RootLayout({
   const jsonLdStore = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "LumiAura",
+    name: "LUMIORA",
     description:
-      "Handmade cold-process soap atelier based in Karachi, Pakistan. Pure oils, whole botanicals, cured 4 weeks.",
+      "Handcrafted cold-process soap atelier based in Karachi, Pakistan. Pure oils, whole botanicals, cured 4 weeks.",
     url: baseUrl,
     telephone: "+923222635439",
     priceRange: "Rs. 500 - Rs. 550",
@@ -148,7 +149,7 @@ export default function RootLayout({
           image: `${baseUrl}/images/soap-pic-1.jpeg`,
           description:
             "Formulated with double power pure niacinamide (Vitamin B3) and organic rice milk extract. Pore tightening, dual skin control, strengthens skin barrier, deeply hydrates.",
-          brand: { "@type": "Brand", name: "LumiAura" },
+          brand: { "@type": "Brand", name: "LUMIORA" },
           offers: {
             "@type": "Offer",
             price: "550",
@@ -168,7 +169,7 @@ export default function RootLayout({
           image: `${baseUrl}/images/soap-pic-3.jpeg`,
           description:
             "Raw wild kasturi turmeric, fresh organic rice milk, kokum butter. Skin tightening and glowing soap, reduces pimple marks & acne, leaves skin soft and supple.",
-          brand: { "@type": "Brand", name: "LumiAura" },
+          brand: { "@type": "Brand", name: "LUMIORA" },
           offers: {
             "@type": "Offer",
             price: "550",
@@ -188,7 +189,7 @@ export default function RootLayout({
           image: `${baseUrl}/images/soap-pic-4.jpeg`,
           description:
             "Fresh ground Arabica coffee and pure raw cocoa butter. Skin glowing and nourishing soap, soft and smooth skin, gentle exfoliation.",
-          brand: { "@type": "Brand", name: "LumiAura" },
+          brand: { "@type": "Brand", name: "LUMIORA" },
           offers: {
             "@type": "Offer",
             price: "500",
@@ -208,7 +209,7 @@ export default function RootLayout({
           image: `${baseUrl}/images/soap-pic-2.png`,
           description:
             "High-potency pure kojic acid and alpha arbutin. Reduces two-tone skin, reduces acne and pimple marks, removes dark spots, anti-aging benefits.",
-          brand: { "@type": "Brand", name: "LumiAura" },
+          brand: { "@type": "Brand", name: "LUMIORA" },
           offers: {
             "@type": "Offer",
             price: "550",

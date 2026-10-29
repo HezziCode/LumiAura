@@ -147,11 +147,11 @@ export default function Home() {
 
   useEffect(() => { document.documentElement.classList.add("js"); }, []);
   useEffect(() => {
-    try { const r = localStorage.getItem("lumiaura-cart") || localStorage.getItem("no-cart"); if (r) setCart(JSON.parse(r)); } catch {}
+    try { const r = localStorage.getItem("lumiora-cart") || localStorage.getItem("lumiaura-cart") || localStorage.getItem("no-cart"); if (r) setCart(JSON.parse(r)); } catch {}
     setLoaded(true);
   }, []);
   useEffect(() => {
-    if (loaded) try { localStorage.setItem("lumiaura-cart", JSON.stringify(cart)); } catch {}
+    if (loaded) try { localStorage.setItem("lumiora-cart", JSON.stringify(cart)); } catch {}
   }, [cart, loaded]);
   useEffect(() => {
     const fn = (e: KeyboardEvent) => {
@@ -321,9 +321,14 @@ export default function Home() {
     <main className="min-h-screen">
       {/* ══════ HEADER ══════ */}
       <header className="sticky top-0 z-40 bg-cream/90 backdrop-blur-md">
-        <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
-          <a href="#top" className="font-serif text-[22px] font-medium tracking-tight">
-            Lumi<span className="text-terracotta">Aura</span>
+        <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-3.5">
+          <a href="#top" className="group flex flex-col items-start leading-none">
+            <span className="font-serif text-[23px] font-medium tracking-wide text-ink">
+              LUMI<span className="text-terracotta font-normal">ORA</span>
+            </span>
+            <span className="text-[9px] font-medium uppercase tracking-[0.24em] text-ink-light mt-1">
+              Handcrafted
+            </span>
           </a>
           <nav className="hidden gap-8 text-[13px] font-medium tracking-wide text-ink-light sm:flex">
             <a href="#shop" className="hover:text-ink transition-colors">Shop</a>
@@ -354,7 +359,7 @@ export default function Home() {
         <div className="flex flex-col justify-center px-6 py-16 lg:px-16 lg:py-24">
           <Reveal>
             <span className="text-[12px] font-medium uppercase tracking-[0.18em] text-terracotta">
-              Artisanal Atelier · Karachi
+              Handcrafted Cold-Process · Karachi
             </span>
             <h1 className="mt-4 font-serif text-[clamp(2.4rem,5vw,3.8rem)] font-light leading-[1.1] tracking-tight">
               Made slowly,<br />by hand.
@@ -630,10 +635,14 @@ export default function Home() {
       {/* ══════ FOOTER ══════ */}
       <footer>
         <div className="mx-auto flex max-w-[1200px] flex-col items-center gap-4 px-6 py-12 text-center text-[12px] text-ink-light sm:flex-row sm:justify-between sm:text-left">
-          <span className="font-serif text-[15px] font-medium text-ink">
-            Lumi<span className="text-terracotta">Aura</span>
-          </span>
-          <span>Cold-process soap · Karachi</span>
+          <div className="flex flex-col items-center sm:items-start leading-tight">
+            <span className="font-serif text-[17px] font-medium text-ink">
+              LUMI<span className="text-terracotta font-normal">ORA</span>
+            </span>
+            <span className="text-[10px] font-medium uppercase tracking-[0.2em] text-ink-light mt-1">
+              Handcrafted Cold-Process Soaps · Karachi
+            </span>
+          </div>
           <a
             href={`https://wa.me/${WA}?text=${encodeURIComponent("Assalam-o-Alaikum, I have a question about your soaps.")}`}
             target="_blank"
