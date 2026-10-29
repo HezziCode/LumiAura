@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="lumiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b6572e" />
+      <stop offset="100%" stop-color="#883616" />
+    </linearGradient>
+  </defs>
+
+  <!-- Terracotta rounded luxury squircle background -->
+  <rect width="64" height="64" rx="16" fill="url(#lumiBg)" />
+
+  <!-- Subtle golden-cream inner frame ring for depth -->
+  <rect x="2.5" y="2.5" width="59" height="59" rx="13.5" fill="none" stroke="#f8f4ed" stroke-width="1" stroke-opacity="0.25" />
+
+  <!-- LUMIORA Botanical Emblem: Twin organic leaves forming a luminous flame/droplet -->
+  <!-- Left accent leaf -->
+  <path d="M 27 49 C 19 45 13 36 14 26 C 14 20 18 15 22 13 C 20 19 21 27 24 33 C 26 38 28 44 27 49 Z" fill="#f8f4ed" />
+  
+  <!-- Right primary leaf (taller and gracefully curved) -->
+  <path d="M 28 50 C 26 43 28 32 32 22 C 36 14 42 8 47 6 C 45 13 43 21 42 28 C 40 37 42 44 38 49 C 35 52 30 52 28 50 Z" fill="#f8f4ed" />
+  
+  <!-- Inner delicate glow accent -->
+  <circle cx="32" cy="49" r="1.5" fill="#f8f4ed" opacity="0.8" />
+</svg>

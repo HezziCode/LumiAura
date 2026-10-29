@@ -12,12 +12,17 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#a04e2a",
     icons: [
       {
-        src: "/images/hero-kraft-box.jpg",
+        src: "/icon.svg",
+        sizes: "any",
+        type: "image/svg+xml",
+      },
+      {
+        src: "/images/lumiora-packaging-showcase.jpg",
         sizes: "192x192",
         type: "image/jpeg",
       },
       {
-        src: "/images/hero-kraft-box.jpg",
+        src: "/images/lumiora-packaging-showcase.jpg",
         sizes: "512x512",
         type: "image/jpeg",
       },
