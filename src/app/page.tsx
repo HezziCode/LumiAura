@@ -187,94 +187,123 @@ export default function Home() {
 
   async function getLiveLocation() {
     if (!navigator.geolocation) {
-      setLocError("Location is not supported by your browser.");
+      setLocError("Location is not supported by your browser. Please type your address.");
       return;
     }
     setLocLoading(true);
     setLocError(null);
-    navigator.geolocation.getCurrentPosition(
-      async (pos) => {
-        const lat = Number(pos.coords.latitude.toFixed(6));
-        const lng = Number(pos.coords.longitude.toFixed(6));
-        setLocation({ lat, lng });
 
-        // Auto reverse-geocode to get the readable Karachi address (Nominatim + Photon proximity fallback)
-        try {
-          const [nomRes, photonRes] = await Promise.allSettled([
-            fetch(
-              `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=18&addressdetails=1&accept-language=en`,
-              { headers: { Accept: "application/json" } }
-            ).then((r) => (r.ok ? r.json() : null)),
-            fetch(`https://photon.komoot.io/reverse?lat=${lat}&lon=${lng}`).then((r) =>
-              r.ok ? r.json() : null
-            ),
-          ]);
+    const onLocationSuccess = async (pos: GeolocationPosition) => {
+      const lat = Number(pos.coords.latitude.toFixed(6));
+      const lng = Number(pos.coords.longitude.toFixed(6));
+      setLocation({ lat, lng });
 
-          const nomData = nomRes.status === "fulfilled" ? nomRes.value : null;
-          const nomAddr = nomData?.address || {};
-          const photonFeature =
-            photonRes.status === "fulfilled"
-              ? photonRes.value?.features?.[0]?.properties
-              : null;
+      // Auto reverse-geocode to get the readable Karachi address (Nominatim + Photon proximity fallback)
+      try {
+        const [nomRes, photonRes] = await Promise.allSettled([
+          fetch(
+            `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}&zoom=18&addressdetails=1&accept-language=en`,
+            { headers: { Accept: "application/json" } }
+          ).then((r) => (r.ok ? r.json() : null)),
+          fetch(`https://photon.komoot.io/reverse?lat=${lat}&lon=${lng}`).then((r) =>
+            r.ok ? r.json() : null
+          ),
+        ]);
 
-          // Extract best house / plot number (Nominatim or Photon proximity search)
-          const houseNumber =
-            nomAddr.house_number ||
-            photonFeature?.housenumber ||
-            nomAddr.building ||
-            "";
+        const nomData = nomRes.status === "fulfilled" ? nomRes.value : null;
+        const nomAddr = nomData?.address || {};
+        const photonFeature =
+          photonRes.status === "fulfilled"
+            ? photonRes.value?.features?.[0]?.properties
+            : null;
 
-          const street =
-            nomAddr.road ||
-            nomAddr.pedestrian ||
-            photonFeature?.street ||
-            "";
+        // Extract best house / plot number (Nominatim or Photon proximity search)
+        const houseNumber =
+          nomAddr.house_number ||
+          photonFeature?.housenumber ||
+          nomAddr.building ||
+          "";
 
-          const neighborhood =
-            nomAddr.neighbourhood ||
-            nomAddr.suburb ||
-            nomAddr.residential ||
-            photonFeature?.locality ||
-            "";
+        const street =
+          nomAddr.road ||
+          nomAddr.pedestrian ||
+          photonFeature?.street ||
+          "";
 
-          const town =
-            nomAddr.town ||
-            nomAddr.city_district ||
-            nomAddr.city ||
-            photonFeature?.city ||
-            "Karachi";
+        const neighborhood =
+          nomAddr.neighbourhood ||
+          nomAddr.suburb ||
+          nomAddr.residential ||
+          photonFeature?.locality ||
+          "";
 
-          // Deduplicate and combine into a clean Karachi address
-          const seen = new Set<string>();
-          const parts: string[] = [];
-          for (const item of [houseNumber, street, neighborhood, town]) {
-            if (item && !seen.has(item.toLowerCase().trim())) {
-              seen.add(item.toLowerCase().trim());
-              parts.push(item.trim());
-            }
+        const town =
+          nomAddr.town ||
+          nomAddr.city_district ||
+          nomAddr.city ||
+          photonFeature?.city ||
+          "Karachi";
+
+        // Deduplicate and combine into a clean Karachi address
+        const seen = new Set<string>();
+        const parts: string[] = [];
+        for (const item of [houseNumber, street, neighborhood, town]) {
+          if (item && !seen.has(item.toLowerCase().trim())) {
+            seen.add(item.toLowerCase().trim());
+            parts.push(item.trim());
           }
-
-          const resolvedAddress =
-            parts.length > 0 ? parts.join(", ") : nomData?.display_name || `Location near ${lat}, ${lng}, Karachi`;
-
-          setArea(resolvedAddress);
-          setErrors((p) => ({ ...p, area: undefined }));
-        } catch {
-          setArea(`Location near ${lat}, ${lng}, Karachi`);
-          setErrors((p) => ({ ...p, area: undefined }));
-        } finally {
-          setLocLoading(false);
         }
-      },
-      (err) => {
+
+        const resolvedAddress =
+          parts.length > 0 ? parts.join(", ") : nomData?.display_name || `Location near ${lat}, ${lng}, Karachi`;
+
+        setArea(resolvedAddress);
+        setErrors((p) => ({ ...p, area: undefined }));
+      } catch {
+        setArea(`Location near ${lat}, ${lng}, Karachi`);
+        setErrors((p) => ({ ...p, area: undefined }));
+      } finally {
         setLocLoading(false);
+      }
+    };
+
+    const onLocationError = (err: GeolocationPositionError) => {
+      setLocLoading(false);
+      if (err.code === 1) {
+        setLocError("Browser permission denied. Please allow location in browser settings, or type your address.");
+      } else if (err.code === 2) {
+        setLocError("Device Location (GPS) is turned OFF. Turn on Location in your phone's notification bar (or laptop settings), or type your address.");
+      } else if (err.code === 3) {
+        setLocError("Location request timed out. Please type your address manually.");
+      } else {
+        setLocError("Could not retrieve GPS. Please type your address manually.");
+      }
+    };
+
+    // Step 1: Try high accuracy first (quick 6s timeout, allows recent 1-min cached position)
+    navigator.geolocation.getCurrentPosition(
+      onLocationSuccess,
+      (err) => {
+        // If user blocked browser permission (code 1), do not retry
         if (err.code === 1) {
-          setLocError("Location permission denied. Please type your address manually.");
-        } else {
-          setLocError("Could not retrieve GPS. Please type your address manually.");
+          onLocationError(err);
+          return;
         }
+        // Step 2: Fallback to network/Wi-Fi positioning (works on laptops & indoors on mobile)
+        navigator.geolocation.getCurrentPosition(
+          onLocationSuccess,
+          (err2) => {
+            // Step 3: Final attempt with generous cache (up to 10 mins)
+            navigator.geolocation.getCurrentPosition(
+              onLocationSuccess,
+              onLocationError,
+              { enableHighAccuracy: false, timeout: 10000, maximumAge: 600000 }
+            );
+          },
+          { enableHighAccuracy: false, timeout: 8000, maximumAge: 180000 }
+        );
       },
-      { enableHighAccuracy: true, timeout: 10000 }
+      { enableHighAccuracy: true, timeout: 6000, maximumAge: 60000 }
     );
   }
 
